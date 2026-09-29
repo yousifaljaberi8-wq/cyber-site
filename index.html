@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عنكبوت بغداد | جهاز مكافحة الابتزاز</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #fff;
+    background: #03070b;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+/* ===== Cyber Background ===== */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background:
+        linear-gradient(rgba(0,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,.035) 1px, transparent 1px),
+        radial-gradient(circle at 20% 20%, rgba(0,220,255,.12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(120,0,255,.10), transparent 30%),
+        #03070b;
+
+    background-size:
+        45px 45px,
+        45px 45px,
+        auto,
+        auto,
+        auto;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 3px,
+            rgba(0,255,255,.015) 4px
+        );
+}
+
+/* ===== Container ===== */
+
+.container {
+    width: 92%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===== Header ===== */
+
+header {
+    text-align: center;
+    padding: 65px 10px 35px;
+}
+
+.logo {
+    font-size: 70px;
+    filter: drop-shadow(0 0 20px #00e5ff);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+h1 {
+    color: #00e5ff;
+    font-size: 38px;
+    text-shadow: 0 0 18px rgba(0,229,255,.45);
+}
+
+.subtitle {
+    color: #ddd;
+    font-size: 19px;
+    margin-top: 4px;
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 18px;
+    border: 1px solid #00e5ff;
+    border-radius: 30px;
+    color: #00e5ff;
+    background: rgba(0,229,255,.05);
+}
+
+/* ===== Main Emergency Button ===== */
+
+.main-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 17px;
+    margin: 10px 0 25px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+
+    background: linear-gradient(90deg, #00a8cc, #006d91);
+    border: 1px solid #00e5ff;
+    border-radius: 14px;
+
+    box-shadow: 0 0 25px rgba(0,229,255,.15);
+    transition: .25s;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 35px rgba(0,229,255,.3);
+}
+
+/* ===== Sections ===== */
+
+section {
+    background: rgba(8,15,22,.90);
+    border: 1px solid rgba(0,229,255,.12);
+    border-radius: 18px;
+    padding: 25px;
+    margin: 20px 0;
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.35),
+        inset 0 0 25px rgba(0,229,255,.015);
+}
+
+h2 {
+    color: #00e5ff;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #ddd;
+}
+
+/* ===== Warning ===== */
+
+.warning {
+    border-right: 4px solid #ff4757;
+}
+
+.warning h2 {
+    color: #ff6b81;
+}
+
+/* ===== Steps ===== */
+
+.steps {
+    list-style: none;
+}
+
+.steps li {
+    background: rgba(255,255,255,.035);
+    border-radius: 12px;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid rgba(255,255,255,.04);
+}
+
+.number {
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+/* ===== Checklist ===== */
+
+.checklist {
+    list-style: none;
+}
+
+.checklist li {
+    margin: 9px 0;
+    padding: 11px;
+    background: rgba(255,255,255,.035);
+    border-radius: 10px;
+}
+
+.checklist input {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+    accent-color: #00e5ff;
+    vertical-align: middle;
+}
+
+/* ===== Contact Buttons ===== */
+
+.contact-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 15px 10px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    transition: .25s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.15);
+}
+
+.instagram {
+    background: linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+/* ===== FAQ ===== */
+
+details {
+    background: rgba(255,255,255,.035);
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 13px 15px;
+    border: 1px solid rgba(255,255,255,.05);
+}
+
+summary {
+    cursor: pointer;
+    color: #00e5ff;
+    font-weight: bold;
+}
+
+details p {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* ===== Privacy Box ===== */
+
+.privacy {
+    border: 1px solid rgba(0,255,180,.15);
+    background: rgba(0,255,180,.035);
+}
+
+.privacy strong {
+    color: #00ffb3;
+}
+
+/* ===== Quick Hide ===== */
+
+.quick-hide {
+    position: fixed;
+    bottom: 18px;
+    left: 18px;
+
+    z-index: 1000;
+
+    background: #111820;
+    color: white;
+    border: 1px solid #00e5ff;
+
+    padding: 11px 15px;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    box-shadow: 0 0 15px rgba(0,229,255,.15);
+}
+
+/* ===== Hidden Screen ===== */
+
+#safeScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+
+    background: #f5f5f5;
+    color: #222;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 25px;
+}
+
+#safeScreen div {
+    max-width: 500px;
+}
+
+#safeScreen h2 {
+    color: #222;
+}
+
+#returnButton {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===== Footer ===== */
+
+footer {
+    text-align: center;
+    color: #777;
+    padding: 30px 10px 80px;
+    font-size: 13px;
+}
+
+.footer-name {
+    color: #00e5ff;
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding-top: 45px;
+    }
+
+    .logo {
+        font-size: 58px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 19px;
+    }
+
+    .contact-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ===== Header ===== -->
+
+    <header>
+
+        <div class="logo">🕷️</div>
+
+        <h1>عنكبوت بغداد</h1>
+
+        <div class="subtitle">
+            جهاز مكافحة الابتزاز
+        </div>
+
+        <div class="badge">
+            حماية • توعية • خصوصية
+        </div>
+
+    </header>
+
+
+    <!-- ===== Emergency ===== -->
+
+    <a href="#help" class="main-button">
+        🚨 أتعرض للابتزاز الآن — ماذا أفعل؟
+    </a>
+
+
+    <!-- ===== Warning ===== -->
+
+    <section class="warning">
+
+        <h2>⚠️ أول شيء: لا تتصرف بعجلة</h2>
+
+        <p>
+            إذا كنت تتعرض للابتزاز، حاول الحفاظ على هدوئك.
+            لا تدفع للمبتز، ولا تهدده، ولا تدخل معه في مشاجرة أو نقاش طويل.
+            أهم خطوة هي المحافظة على الأدلة والمعلومات الموجودة لديك.
+        </p>
+
+    </section>
+
+
+    <!-- ===== Main Steps ===== -->
+
+    <section id="help">
+
+        <h2>🛡️ الخطوات الأولى</h2>
+
+        <ul class="steps">
+
+            <li>
+                <span class="number">01 — احفظ الأدلة</span><br>
+                التقط Screenshots للمحادثات والتهديدات والرسائل وأي معلومات
+                مرتبطة بالحادثة.
+            </li>
+
+            <li>
+                <span class="number">02 — احتفظ بحساب المبتز</span><br>
+                احتفظ باسم المستخدم، رابط الحساب، رقم الهاتف أو أي معلومة
+                متوفرة عنه.
+            </li>
+
+            <li>
+                <span class="number">03 — لا تحذف المحادثات</span><br>
+                لا تحذف الرسائل أو الصور أو الملفات التي يمكن أن تكون دليلاً.
+            </li>
+
+            <li>
+                <span class="number">04 — لا تدفع ولا ترسل المزيد</span><br>
+                لا ترسل أموالاً أو صوراً أو معلومات إضافية استجابةً للتهديد.
+            </li>
+
+            <li>
+                <span class="number">05 — لا تهدد المبتز</span><br>
+                لا تحاول الانتقام أو اختراق حسابه أو تهديده أو استفزازه.
+                هذه التصرفات قد تزيد المشكلة.
+            </li>
+
+            <li>
+                <span class="number">06 — تواصل بهدوء</span><br>
+                جهّز المعلومات المتوفرة لديك وتواصل للحصول على الإرشاد
+                المناسب.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ===== Evidence Checklist ===== -->
+
+    <section>
+
+        <h2>📋 جهّز المعلومات المتوفرة لديك</h2>
+
+        <ul class="checklist">
+
+            <li>
+                <label>
+                    <input type="checkbox">
+                    Screenshots للمحادثات
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="checkbox">
+                    رابط أو اسم حساب المبتز
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="checkbox">
+                    رقم الهاتف إن كان متوفراً
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="checkbox">
+                    الرسائل والتهديدات
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="checkbox">
+                    تاريخ ووقت الحادثة تقريباً
+                </label>
+            </li>
+
+            <li>
+                <label>
+                    <input type="checkbox">
+                    اسم المنصة المستخدمة
+                </label>
+            </li>
+
+        </ul>
+
+        <p style="margin-top:15px;color:#aaa;">
+            🔒 لا ترسل كلمات المرور أو رموز تسجيل الدخول أو رموز التحقق
+            الخاصة بحساباتك.
+        </p>
+
+    </section>
+
+
+    <!-- ===== Account Security ===== -->
+
+    <section>
+
+        <h2>🔐 أمّن حساباتك</h2>
+
+        <ul class="steps">
+
+            <li>غيّر كلمة المرور إذا كنت تشك بأنها معروفة لشخص آخر.</li>
+
+            <li>فعّل التحقق بخطوتين (2FA).</li>
+
+            <li>راجع الأجهزة والجلسات المسجلة في حسابك.</li>
+
+            <li>لا تشارك رمز تسجيل الدخول أو رمز التحقق مع أي شخص.</li>
+
+            <li>راجع إعدادات الخصوصية في حساباتك.</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ===== During Case ===== -->
+
+    <section>
+
+        <h2>⏳ أثناء التعامل مع الحالة</h2>
+
+        <p>
+            لا تدخل في نقاش طويل مع المبتز، ولا تحاول استفزازه أو تهديده.
+            احتفظ بالأدلة كما هي، ولا تنشر تفاصيل القضية بشكل علني.
+        </p>
+
+        <br>
+
+        <p>
+            إذا كان هناك تهديد مباشر للسلامة أو خطر حقيقي، تواصل مع
+            الجهات المختصة في منطقتك.
+        </p>
+
+    </section>
+
+
+    <!-- ===== FAQ ===== -->
+
+    <section>
+
+        <h2>❓ أسئلة شائعة</h2>
+
+        <details>
+            <summary>هل أحذف حسابي؟</summary>
+            <p>
+                لا تتخذ قراراً سريعاً بحذف الحساب قبل حفظ الأدلة والمعلومات
+                المهمة المرتبطة بالحادثة.
+            </p>
+        </details>
+
+        <details>
+            <summary>هل أدفع للمبتز حتى يتوقف؟</summary>
+            <p>
+                لا تتخذ قراراً تحت الضغط ولا ترسل أموالاً أو معلومات إضافية
+                استجابةً للتهديد.
+            </p>
+        </details>
+
+        <details>
+            <summary>ماذا أفعل إذا كان المبتز يعرف معلومات عني؟</summary>
+            <p>
+                احتفظ بما يرسله لك، أمّن حساباتك، وقلل المعلومات العامة
+                المتاحة عنك، واطلب الإرشاد المناسب.
+            </p>
+        </details>
+
+        <details>
+            <summary>هل أرسل كلمات المرور عند طلب المساعدة؟</summary>
+            <p>
+                لا. لا تشارك كلمات المرور أو رموز التحقق أو رموز تسجيل الدخول
+                مع أي شخص.
+            </p>
+        </details>
+
+        <details>
+            <summary>هل الموقع جهة حكومية؟</summary>
+            <p>
+                لا. هذا الموقع مخصص للتوعية والإرشاد الرقمي، وليس بديلاً
+                عن الجهات الرسمية أو الإجراءات القانونية.
+            </p>
+        </details>
+
+    </section>
+
+
+    <!-- ===== Privacy ===== -->
+
+    <section class="privacy">
+
+        <h2>🔒 الخصوصية أولاً</h2>
+
+        <p>
+            لا تنشر صورك أو محادثاتك الخاصة في التعليقات أو بشكل علني.
+            شارك فقط المعلومات الضرورية عبر قناة تواصل خاصة.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>
+                لا نطلب منك كلمات المرور أو رموز التحقق.
+            </strong>
+        </p>
+
+    </section>
+
+
+    <!-- ===== Contact ===== -->
+
+    <section>
+
+        <h2>📞 تواصل معنا</h2>
+
+        <p>
+            يمكنك التواصل عبر حساباتنا الرسمية:
+        </p>
+
+        <div class="contact-buttons">
+
+            <a
+                class="btn instagram"
+                href="https://instagram.com/cy.spider"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                📷 Instagram
+                <br>
+                @cy.spider
+
+            </a>
+
+
+            <a
+                class="btn facebook"
+                href="https://www.facebook.com/share/19eY936z3e/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                📘 Facebook
+                <br>
+                صفحة التواصل
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== Official Notice ===== -->
+
+    <section>
+
+        <h2>⚖️ تنبيه مهم</h2>
+
+        <p>
+            المعلومات الموجودة في هذا الموقع تهدف إلى التوعية والحماية
+            الرقمية والإرشاد العام. عند وجود جريمة أو تهديد حقيقي،
+            يمكن للضحية التواصل مع الجهات المختصة واتباع الإجراءات القانونية
+            المناسبة.
+        </p>
+
+    </section>
+
+
+    <!-- ===== Footer ===== -->
+
+    <footer>
+
+        <div class="footer-name">
+            🕷️ عنكبوت بغداد
+        </div>
+
+        جهاز مكافحة الابتزاز
+
+        <br><br>
+
+        حماية • توعية • خصوصية
+
+    </footer>
+
+</div>
+
+
+<!-- ===== Quick Hide Button ===== -->
+
+<button class="quick-hide" onclick="quickHide()">
+    ⚡ إخفاء سريع
+</button>
+
+
+<!-- ===== Safe Screen ===== -->
+
+<div id="safeScreen">
+
+    <div>
+
+        <h2>صفحة معلومات عامة</h2>
+
+        <p>
+            هذه الصفحة تحتوي على معلومات عامة حول السلامة الرقمية.
+        </p>
+
+        <button id="returnButton" onclick="returnToSite()">
+            العودة للموقع
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function quickHide() {
+
+    document.getElementById("safeScreen").style.display = "flex";
+
+}
+
+function returnToSite() {
+
+    document.getElementById("safeScreen").style.display = "none";
+
+}
+
+</script>
+
+</body>
+</html>
